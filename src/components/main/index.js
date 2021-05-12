@@ -32,6 +32,12 @@ export default class Main extends Component {
     handleSubmit = e => {
 
         e.preventDefault()
+
+        if(this.state.newTask === '') {
+            alert('Por favor, preecha o campo de tarefa')
+            return
+        }
+
         this.setState({ taskList: [...this.state.taskList, this.state.newTask],  newTask: '' })
     }
 
